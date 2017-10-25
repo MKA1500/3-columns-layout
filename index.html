@@ -20,11 +20,11 @@
     <header>
         <div class="top-header-bar">
             <nav class="top-navig" ng-class="{'menuShown' : toggle, 'menuHidden' : !toggle }">
-                <ul ng-class="{'menuItemsShown' : toggle, 'menuHidden' : !toggle }">
-                    <li ng-click="toggle = !toggle">Item One</li>
-                    <li ng-click="toggle = !toggle">Lorem ipsum</li>
-                    <li ng-click="toggle = !toggle">Dolor sit amet</li>
-                    <li ng-click="toggle = !toggle">Coś jeszczze</li>
+                <ul class="top-navig-list">
+                    <li ng-click="toggle = !toggle"><a href="#">Item One</a></li>
+                    <li ng-click="toggle = !toggle"><a href="#">Lorem ipsum</a></li>
+                    <li ng-click="toggle = !toggle"><a href="#">Sport</a></li>
+                    <li ng-click="toggle = !toggle"><a href="#">Coś jeszcze</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,9 +37,13 @@
     </header>
     <main>
         <div ng-repeat="item in mainContent" class="main-article-box">
-            <img src="{{item.pic}}" class="picture">
-            <h2 class="main-lead" class="lead-content">{{item.title}}</h2>
-            <p class="main-lead" class="lead-content">{{item.lead}}</p>
+            <div class="image-wrap">
+                <img src="{{item.pic}}" class="picture">
+            </div>
+            <div class="text-article-wrap">
+                <h2 class="main-lead" class="lead-content">{{item.title}}</h2>
+                <p class="main-lead" class="lead-content">{{item.lead}}</p>
+            </div>
         </div>
     </main>
     <!--<aside class="left-aside">
