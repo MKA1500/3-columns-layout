@@ -5,123 +5,125 @@ $normal-font: 12px;
 $big-font: 14px;
 $font-larg-header: 18px;
 
-
-body {
+* {
   margin: 0;
   padding: 0;
-  background-color: $background-color;
-  font-family: Arial, sans-serif;
+  box-sizing: border-box;
 
-  #wrapper {
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
+  body {
+    background-color: red;
+    font-family: Arial, sans-serif;
 
-    header {
-      position: relative;
+    #wrapper {
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
 
-      .top-header-bar {
-        width: 100%;
-        height: 20px;
-        border-bottom: 1px solid $primary-color;
+      header {
+        position: relative;
 
-        nav.top-navig {
+        .top-header-bar {
           width: 100%;
-          height: 120px;
-          position: absolute;
-          background-color: $background-color;
-          transition: all 1s ease-in-out;
+          height: 20px;
+          border-bottom: 1px solid $primary-color;
 
-          &.menuHidden {
-            display: none;
-          }
-
-          &.menuShown {
-            display: block;
-          }
-
-          ul.top-navig-list {
+          nav.top-navig {
             width: 100%;
-            text-align: center;
-            padding-left: 0px;
+            height: 120px;
+            position: absolute;
+            background-color: $background-color;
+            transition: all 1s ease-in-out;
 
-            &.menuItemsShown {
-              display: block !important;
+            &.menuHidden {
+              display: none;
             }
 
-            &.menuItemsHidden {
-              display: none !important;
+            &.menuShown {
+              display: block;
             }
 
-            li {
-              list-style-type: none;
-              padding: 3px 0px;
-              border-bottom: 1px solid $primary-color;
+            ul.top-navig-list {
+              width: 100%;
+              text-align: center;
+              padding-left: 0px;
 
-              a {
-                font-size: $normal-font;
-                font-weight: bold;
-                color: $primary-color;
-                text-decoration: none;
+              &.menuItemsShown {
+                display: block !important;
+              }
 
-                &:hover {
+              &.menuItemsHidden {
+                display: none !important;
+              }
+
+              li {
+                list-style-type: none;
+                padding: 3px 0px;
+                border-bottom: 1px solid $primary-color;
+
+                a {
+                  font-size: $normal-font;
+                  font-weight: bold;
+                  color: $primary-color;
                   text-decoration: none;
-                }
 
+                  &:hover {
+                    text-decoration: none;
+                  }
+
+                }
               }
             }
           }
         }
-      }
 
-      .bottom-header-bar {
-        width: 100%;
-        height: auto;
-        border-bottom: 1px solid $primary-color;
-
-        img.top-logo {
-          margin: 20px 0px;
-          height: 45px;
-        }
-
-        img.hamburger-menu {
-          margin: 20px 0px;
-          float: right;
-          height: 45px;
-          cursor: pointer;
-        }
-      }
-    }
-
-    main {
-      margin-top: 20px;
-      grid-template-columns: 50% 50%;
-      grid-template-rows: 25% 25% 25% auto;
-
-      .main-article-box {
-        width: 100%;
-        display: inline-block;
-
-        @media screen and (min-width: 481px) {
-          width: 50%;
-        }
-
-        .image-wrap {
+        .bottom-header-bar {
           width: 100%;
-          height: 50%;
-          overflow: hidden;
+          height: auto;
+          border-bottom: 1px solid $primary-color;
 
-          .picture {
-            width: 100%;
-            height: auto;
+          img.top-logo {
+            margin: 20px 0px;
+            height: 45px;
+          }
+
+          img.hamburger-menu {
+            margin: 20px 0px;
+            float: right;
+            height: 45px;
+            cursor: pointer;
           }
         }
+      }
 
-        .text-article-wrap {
+      main {
+        margin-top: 20px;
+        grid-template-columns: 1fr 1fr;
+
+        .main-article-box {
           width: 100%;
-          height: 50%;
-        }
+          display: inline-block;
 
+          @media screen and (min-width: 481px) {
+            width: 50%;
+          }
+
+          .image-wrap {
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+
+            .picture {
+              width: 100%;
+              height: auto;
+            }
+          }
+
+          .text-article-wrap {
+            width: 100%;
+            height: 50%;
+          }
+
+        }
       }
     }
   }
