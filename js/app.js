@@ -24,7 +24,7 @@ myApp.controller('myController', ['$scope', function ($scope) {
         },
         {
             "title": "Maecenas tempor in lectus a fermentum",
-            "pic": "https://c1.staticflickr.com/1/685/31915688963_bba4a93303_b.jpg",
+            "pic": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/330px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
             "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel neque congue, pretium nulla non, convallis lorem."
         },
         {
@@ -34,7 +34,7 @@ myApp.controller('myController', ['$scope', function ($scope) {
         },
         {
             "title": "Maecenas tempor in lectus a fermentum",
-            "pic": "https://c2.staticflickr.com/8/7233/7314543258_9a2570a55c_b.jpg",
+            "pic": "https://c1.staticflickr.com/1/685/31915688963_bba4a93303_b.jpg",
             "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel neque congue, pretium nulla non, convallis lorem."
         },
         {
@@ -54,7 +54,7 @@ myApp.controller('myController', ['$scope', function ($scope) {
         },
         {
             "title": "Maecenas tempor in lectus a fermentum",
-            "pic": "https://c2.staticflickr.com/8/7233/7314543258_9a2570a55c_b.jpg",
+            "pic": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/330px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
             "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel neque congue, pretium nulla non."
         },
         {
@@ -75,14 +75,14 @@ myApp.controller('myController', ['$scope', function ($scope) {
     ];
      $scope.leftAside = [
          {
+             "title": "Nam vel neque",
+             "pic": "https://c1.staticflickr.com/9/8455/7944486832_467cd9b664_b.jpg",
+             "lead": "Nam vel neque congue, pretium nulla non, convallis lorem."
+         },
+         {
              "title": "Maecenas tempor",
              "pic": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Rogale_%C5%9Bwi%C4%99tomarci%C5%84skie_RB1.JPG/345px-Rogale_%C5%9Bwi%C4%99tomarci%C5%84skie_RB1.JPG",
              "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-         },
-         {
-             "title": "Nam vel neque",
-             "pic": "https://c1.staticflickr.com/1/685/31915688963_bba4a93303_b.jpg",
-             "lead": "Nam vel neque congue, pretium nulla non, convallis lorem."
          },
          {
              "title": "Maecenas tempor",
@@ -108,8 +108,8 @@ myApp.controller('myController', ['$scope', function ($scope) {
      $scope.rightAside = [
          {
              "title": "Maecenas tempor",
-             "pic": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Rogale_%C5%9Bwi%C4%99tomarci%C5%84skie_RB1.JPG/345px-Rogale_%C5%9Bwi%C4%99tomarci%C5%84skie_RB1.JPG",
-             "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+             "pic": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Stary_Rynek_w_Poznaniu_widok6.JPG/718px-Stary_Rynek_w_Poznaniu_widok6.JPG",
+             "lead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
          },
          {
              "title": "Nam vel neque",
@@ -128,7 +128,7 @@ myApp.controller('myController', ['$scope', function ($scope) {
          },
          {
              "title": "Nam vel neque",
-             "pic": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/330px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
+             "pic": "https://c1.staticflickr.com/9/8397/8669452579_a783b7745a_b.jpg",
              "lead": "Nam vel neque congue, pretium nulla non, convallis lorem."
          }
      ];

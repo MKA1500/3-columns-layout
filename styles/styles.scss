@@ -1,11 +1,34 @@
 $primary-color: #111;
 $background-color: #FAFFE1;
 $background-secondary: #dee3c5;
-$primary-white: #FFF;
 $small-font: 11px;
 $normal-font: 12px;
 $big-font: 14px;
-$font-larg-header: 18px;
+$font-large: 18px;
+
+@mixin tablet {
+  @media (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: 767px) {
+    @content;
+  }
+}
+
+@mixin large-laptop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -34,8 +57,19 @@ $font-larg-header: 18px;
           background-color: $background-color;
           transition: all 1s ease-in-out;
 
+          @include laptop {
+            width: auto;
+            height: auto;
+            right: 5%;
+            top: 20px;
+          }
+
           &.menuHidden {
             display: none;
+
+            @include laptop {
+              display: block;
+            }
           }
 
           &.menuShown {
@@ -61,11 +95,21 @@ $font-larg-header: 18px;
               padding: 3px 0px;
               border-bottom: 1px solid $primary-color;
 
+              @include laptop {
+                display: inline-block;
+                border-bottom: none;
+              }
+
               a {
                 font-size: $normal-font;
                 font-weight: bold;
                 color: $primary-color;
                 text-decoration: none;
+
+                @include laptop {
+                  font-size: $big-font;
+                  padding: 5px 0px 0px 10px;
+                }
 
                 &:hover {
                   text-decoration: none;
@@ -92,6 +136,10 @@ $font-larg-header: 18px;
           float: right;
           height: 45px;
           cursor: pointer;
+
+          @include laptop {
+            display: none;
+          }
         }
       }
     }
@@ -101,29 +149,106 @@ $font-larg-header: 18px;
       display: block;
       padding: 0 5%;
 
-      @media screen and (min-width: 480px) {
+      @include tablet {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-column-gap: 20px;
+      }
+
+      @include laptop {
+        width: 80%;
+        float: left;
+        padding: 0 5% 0 0;
+        margin-left: 20%;
+      }
+
+      @include large-laptop {
+        padding: 0px;
+        width: 60%;
+      }
+
+      @include desktop {
+        grid-template-columns: 1fr 1fr 1fr;
       }
 
       .main-article-box {
         padding: 5px 0px;
 
+        &:first-child {
+
+          @include tablet {
+            grid-column-end: span 2;
+          }
+
+          @include desktop {
+            grid-column-end: span 3;
+          }
+
+          .article-picture {
+            background-position: 50% 25%;
+
+            @include tablet {
+              height: 220px;
+              background-size: 700px;
+              background-position: 50% 15%;
+            }
+
+            @include laptop {
+              background-size: 770px;
+              height: 220px;
+            }
+
+            @include desktop {
+              background-size: 1100px;
+              height: 300px;
+            }
+          }
+        }
+
+        &:nth-child(5) {
+
+          @include tablet {
+            grid-row-end: span 2;
+          }
+
+          .article-picture {
+
+            @include tablet {
+              height: 450px;
+              background-size: 648px;
+              background-position: 50% 50%;
+            }
+
+            @include desktop {
+              height: 490px;
+              background-size: 700px;
+            }
+          }
+        }
+
         &:nth-child(n+5) {
           display: none;
+
+          @include tablet {
+            display: block;
+          }
         }
 
         .article-picture {
           width: 100%;
-          height: 250px;
+          height: 180px;
           background-size: 410px;
           background-position: 50% 50%;
         }
 
         .text-article-wrap {
 
-          h1, p {
-            padding-bottom: 10px;
+          h2.main-title {
+            padding: 5px 0px;
+          }
+
+          p.main-lead {
+            padding: 5px 0px;
           }
         }
 
@@ -137,8 +262,30 @@ $font-larg-header: 18px;
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 20px;
 
+      @include tablet {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      @include laptop {
+        display: block;
+        width: 20%;
+        float: left;
+        padding: 15px 0 0 5%;
+        margin-left: -100%;
+        background-color: $background-color;
+      }
+
+      @include large-laptop {
+        margin-left: -80%;
+        width: 20%;
+      }
+
       .left-article-box {
         padding: 10px 0px;
+
+        @include laptop {
+          padding: 10px 20px 10px 0px;
+        }
 
         .left-picture {
           width: 100%;
@@ -146,6 +293,32 @@ $font-larg-header: 18px;
           background-size: 250px;
           background-position: 50% 50%;
           border-radius: 5px;
+
+          @include laptop {
+            background-size: 180px;
+            height: 100px;
+          }
+
+          @include desktop {
+            background-size: 300px;
+            height: 150px;
+          }
+        }
+
+        .text-left-wrap {
+
+          h2.left-title {
+            @include laptop {
+              font-size: 18px;
+              padding: 10px 0px;
+            }
+          }
+
+          p.left-lead {
+            @include laptop {
+              font-size: 16px;
+            }
+          }
         }
       }
 
@@ -153,23 +326,107 @@ $font-larg-header: 18px;
 
     aside.right-aside {
       margin-top: 20px;
-      display: block;
-      padding: 0 5%;
+      padding: 15px 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 20px;
+      clear: both;
+
+      @include tablet {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      @include laptop {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+
+      @include large-laptop {
+        display: block;
+        clear: none;
+        float: right;
+        width: 20%;
+        padding: 15px 5% 0 0;
+        margin-top: 0px;
+      }
 
       .right-article-box {
         padding: 5px 0px;
 
+        @include large-laptop {
+          padding: 10px 0 10px 20px;
+        }
+
+        &:first-child {
+          grid-column-end: span 2;
+
+          .right-picture {
+            background-size: 440px;
+          }
+
+          .text-right-wrap {
+
+            h2.right-title {
+              @include large-laptop {
+                font-size: 18px;
+                padding: 10px 0px;
+              }
+            }
+
+            p.right-lead {
+              @include large-laptop {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+
+        &:nth-child(4){
+          grid-column-end: span 2;
+
+          .right-picture {
+            background-size: 440px;
+          }
+        }
+
+        &:nth-child(5){
+          grid-column-end: span 2;
+
+          @include tablet {
+            grid-column-end: span 3;
+          }
+
+          @include laptop {
+            grid-column-end: span 2;
+          }
+
+          .right-picture {
+            background-size: 440px;
+
+            @include tablet {
+              background-size: 750px;
+            }
+
+            @include laptop {
+              background-size: 440px;
+            }
+          }
+        }
+
         .right-picture {
           width: 100%;
-          height: 250px;
-          background-size: 410px;
+          height: 180px;
+          background-size: 275px;
           background-position: 50% 50%;
         }
 
         .text-right-wrap {
 
-          h1, p {
-            padding-bottom: 10px;
+          h2.right-title {
+            padding: 5px 0px;
+          }
+
+          p.right-lead {
+            padding: 5px 0px;
           }
         }
 
@@ -177,13 +434,20 @@ $font-larg-header: 18px;
     }
 
     footer {
-      @extend aside.right-aside;
+      padding: 20px 5%;
       background-color: $background-secondary;
+      padding-bottom: 30px;
+      clear: both;
+      position: relative;
 
       .top-footer-bar {
         width: 100%;
         text-align: center;
         padding: 20px 0px;
+
+        @include laptop {
+          text-align: left;
+        }
 
         img.footer-logo {
           width: 120px;
@@ -192,21 +456,44 @@ $font-larg-header: 18px;
 
       .bottom-footer-bar {
 
+        @include laptop {
+          position: absolute;
+          right: 5%;
+          top: 22px;
+        }
+
+        @include laptop {
+          float: right;
+        }
+
         nav.footer-navig {
 
           ul.footer-navig-list {
-            @extend ul.top-navig-list;
+            width: 100%;
+            text-align: center;
+            padding-left: 0px;
+            margin-top: 13px;
 
             li {
               list-style-type: none;
               padding: 3px 0px;
-              border-bottom: 1px solid $primary-white;
+              border-bottom: 1px solid $primary-color;
+
+              @include laptop {
+                border-bottom: none;
+                display: inline-block;
+              }
 
               a {
                 font-size: $normal-font;
                 font-weight: bold;
-                color: $primary-white;
+                color: $primary-color;
                 text-decoration: none;
+                font-size: $normal-font;
+
+                @include laptop {
+                  padding: 5px 0px 0px 10px;
+                }
               }
             }
           }
@@ -215,6 +502,14 @@ $font-larg-header: 18px;
         p {
           width: 100%;
           text-align: center;
+          color: $primary-color;
+          font-weight: bold;
+          font-size: $normal-font;
+          padding-top: 7px;
+
+          @include laptop {
+            text-align: right;
+          }
         }
       }
     }
