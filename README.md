@@ -1,7 +1,7 @@
 SASS/CSS, AngularJS 1.x
 
-for localhost:8000 and SCSS->CSS watcher please just type a 'gulp' command
+To load all dependencies please type 'npm install' in your command line.
 
-CSS Grid works well on Chrome and FireFox
+Then, to open localhost:8000 and SCSS->CSS watcher just type a 'gulp'.
 
-unfortunately it's not yet supported by IE
+CSS Grid works well on Chrome and FireFox. Unfortunately it's not yet supported by IE.
