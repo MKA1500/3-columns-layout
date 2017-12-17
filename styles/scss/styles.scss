@@ -1,6 +1,6 @@
-$primary-color: #111;
-$background-color: #FAFFE1;
-$background-secondary: #dee3c5;
+$primary-color: #0f0f0f;
+$background-color: #f9f9f9;
+$background-secondary: #ebebeb;
 $small-font: 11px;
 $normal-font: 12px;
 $big-font: 14px;
@@ -18,14 +18,8 @@ $font-large: 18px;
   }
 }
 
-@mixin large-laptop {
-  @media (min-width: 1024px) {
-    @content;
-  }
-}
-
 @mixin desktop {
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     @content;
   }
 }
@@ -162,11 +156,6 @@ $font-large: 18px;
         margin-left: 20%;
       }
 
-      @include large-laptop {
-        padding: 0px;
-        width: 60%;
-      }
-
       @include desktop {
         grid-template-columns: 1fr 1fr 1fr;
       }
@@ -275,11 +264,6 @@ $font-large: 18px;
         background-color: $background-color;
       }
 
-      @include large-laptop {
-        margin-left: -80%;
-        width: 20%;
-      }
-
       .left-article-box {
         padding: 10px 0px;
 
@@ -322,115 +306,6 @@ $font-large: 18px;
         }
       }
 
-    }
-
-    aside.right-aside {
-      margin-top: 20px;
-      padding: 15px 5%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 20px;
-      clear: both;
-
-      @include tablet {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-
-      @include laptop {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-      }
-
-      @include large-laptop {
-        display: block;
-        clear: none;
-        float: right;
-        width: 20%;
-        padding: 15px 5% 0 0;
-        margin-top: 0px;
-      }
-
-      .right-article-box {
-        padding: 5px 0px;
-
-        @include large-laptop {
-          padding: 10px 0 10px 20px;
-        }
-
-        &:first-child {
-          grid-column-end: span 2;
-
-          .right-picture {
-            background-size: 440px;
-          }
-
-          .text-right-wrap {
-
-            h2.right-title {
-              @include large-laptop {
-                font-size: 18px;
-                padding: 10px 0px;
-              }
-            }
-
-            p.right-lead {
-              @include large-laptop {
-                font-size: 16px;
-              }
-            }
-          }
-        }
-
-        &:nth-child(4){
-          grid-column-end: span 2;
-
-          .right-picture {
-            background-size: 440px;
-          }
-        }
-
-        &:nth-child(5){
-          grid-column-end: span 2;
-
-          @include tablet {
-            grid-column-end: span 3;
-          }
-
-          @include laptop {
-            grid-column-end: span 2;
-          }
-
-          .right-picture {
-            background-size: 440px;
-
-            @include tablet {
-              background-size: 750px;
-            }
-
-            @include laptop {
-              background-size: 440px;
-            }
-          }
-        }
-
-        .right-picture {
-          width: 100%;
-          height: 180px;
-          background-size: 275px;
-          background-position: 50% 50%;
-        }
-
-        .text-right-wrap {
-
-          h2.right-title {
-            padding: 5px 0px;
-          }
-
-          p.right-lead {
-            padding: 5px 0px;
-          }
-        }
-
-      }
     }
 
     footer {
